@@ -1,3 +1,7 @@
 user = str(input())
-c = f'Привет, {user}! Как ты?'
+if user == "Маша":
+    c = f'Привет, {user}! Как ты?'
+else:
+    c = f'"Эй, {user}, ты ещё кто такой?'
+
 print(c)
