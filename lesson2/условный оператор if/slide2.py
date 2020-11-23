@@ -1,5 +1,11 @@
 
-#list = [{'str1': 'Python', 'str2': 'learn'}, {'str1': 'четыре', 'str2': 'два'}, {'str1': 2, 'str2': 4}, {'str1': 'три', 'str2': 'три'}, {'str1': 'кот', 'str2': 'кошка'}]
+#list = [
+#    {'str1': 'Python', 'str2': 'learn'}, 
+#    {'str1': 'четыре', 'str2': 'два'}, 
+#    {'str1': 2, 'str2': 4}, 
+#    {'str1': 'три', 'str2': 'три'},     
+#    {'str1': 'кот', 'str2': 'кошка'}
+#]
 
 
 def str_comp(str1, str2):
@@ -12,6 +18,7 @@ def str_comp(str1, str2):
             return 3    
     else: 
         return 0
+
 #Автопроверка с использованием данных в списке словарей list:
 #for i in range(len(list)):
 #    print(str_comp(list[i]['str1'], list[i]['str2']))
