@@ -6,9 +6,7 @@ talks = {
 }
 
 def ask_user(question):
-    for i in talks:
-        if i == question:
-            print(talks[i])
+    print(talks.get(question))
 
 while True:
     ask_user(input())

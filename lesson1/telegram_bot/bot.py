@@ -4,18 +4,17 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import settings
 
 #logging.basicConfig(filename='bot.log', level=logging.INFO)
-logging.basicConfig(stream=open(r'D:\Coding\LearnPython\lesson1\Telegram bot\bot.log', 'w', encoding='utf-8'), level=logging.INFO)
+logging.basicConfig(stream=open('bot.log', 'w', encoding='utf-8'), level=logging.INFO)
 
 #PROXY = {'proxy_url': settings.PROXY_URL,
 #       'urllib3_proxy_kwargs': {'username': settings.PROXY_USERNAME , 'password': settings.PROXY_PASSWORD }}
 
 def greet_user(update, context):
-    print('Вызван /start')
+    logging.info('Вызван /start')
     update.message.reply_text('Здравствуй, пользователь!')
 
 def talk_to_me(update, context):
     text = update.message.text
-    print(text)
     update.message.reply_text(text)
 
 def main():
