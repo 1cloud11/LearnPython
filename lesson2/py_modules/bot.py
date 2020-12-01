@@ -38,6 +38,7 @@ def planet_info(update, context):
     obj_info = planets.get(planet)
     obj_situated = ephem.constellation(obj_info)
     update.message.reply_text(f'Планета {planet} сейчас находится в созвездии {obj_situated}')
+
 def main():
     mybot = Updater(settings.API_KEY, use_context=True)
     
