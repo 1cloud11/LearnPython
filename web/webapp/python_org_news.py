@@ -1,3 +1,5 @@
+from datetime import datetime
+from webapp.model import db, News
 import requests
 import logging
 from bs4 import BeautifulSoup
@@ -25,10 +27,13 @@ def get_python_news():
             title = news.find('a').text
             url = news.find('a')['href']
             published = news.find('time').text
-            result_news.append({
-                'title': title,
-                'url': url,
-                'published': published
-                        })
-        return result_news
-    return False
+            try:
+                published = datetime.strptime(published, '%Y-%m-%d')
+            except ValueError:
+                published = datetime.now()
+            save_news(title, url, published)
+
+def save_news(title, url, published):
+    news_news = News(title=title, url=url, published=published)
+    db.session.add(news_news)
+    db.session.commit()
