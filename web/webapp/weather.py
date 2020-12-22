@@ -5,8 +5,9 @@ from flask import current_app
 
 logging.basicConfig(filename='work.log', level=logging.INFO)
 
+
 def weather_by_city(city_name):
-    
+
     weather_url = current_app.config["WEATHER_URL"]
     params = {
         "key": current_app.config["WEATHER_API_KEY"],
@@ -29,6 +30,7 @@ def weather_by_city(city_name):
         logging.info('Сетевая ошибка при запросе погоды')
         return False
     return False
+
 
 if __name__ == "__main__":
     w = weather_by_city("Kiev,Ukraine")
