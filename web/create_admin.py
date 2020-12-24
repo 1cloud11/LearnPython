@@ -25,6 +25,4 @@ with app.app_context():
 
     db.session.add(new_user)
     db.session.commit()
-    print(f'Создан пользователь с id: {new_user.id}')
-
-#ошибка при внесении данных в дб, нужно исправить
+    print(f'Создан пользователь с id: {new_user.user_id}')
