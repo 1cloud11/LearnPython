@@ -1,8 +1,10 @@
 from datetime import datetime
-from webapp.model import db, News
+
+from webapp.db import db, News
 import requests
 import logging
 from bs4 import BeautifulSoup
+from webapp.news.models import News
 
 logging.basicConfig(filename='work.log', level=logging.INFO)
 
